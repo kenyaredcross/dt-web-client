@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Google_Sans_Flex, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { Google_Sans_Flex } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/Footer";
+import { SITE_URL, SITE_NAME, SITE_DESC } from "./lib/seo";
 
 const googleSansFlex = Google_Sans_Flex({
   variable: "--font-google-sans",
@@ -8,22 +10,28 @@ const googleSansFlex = Google_Sans_Flex({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const sourceSerif4 = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
-
 export const metadata: Metadata = {
-  title: "Kenya Red Cross | Digital Transformation",
-  description:
-    "The Digital Transformation Department is connecting people, data and technology so Kenya Red Cross can reach communities faster, in every county.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: "Kenya Red Cross | Digital Transformation", template: "%s | Kenya Red Cross" },
+  description: SITE_DESC,
+  applicationName: SITE_NAME,
+  keywords: ["Kenya Red Cross", "Digital Transformation", "humanitarian technology", "KRCS", "Africa"],
+  authors: [{ name: "Kenya Red Cross Digital Transformation Department", url: SITE_URL }],
+  creator: "Kenya Red Cross Society",
+  openGraph: {
+    type: "website",
+    locale: "en_KE",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "Kenya Red Cross | Digital Transformation",
+    description: SITE_DESC,
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@KenyaRedCross",
+    creator: "@KenyaRedCross",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -32,8 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${googleSansFlex.variable} ${jetbrainsMono.variable} ${sourceSerif4.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={googleSansFlex.variable}>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
