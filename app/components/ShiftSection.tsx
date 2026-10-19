@@ -25,7 +25,7 @@ export default function ShiftSection() {
 
   return (
     <section id="shift" ref={ref}>
-      <h2 className="rv">How we serve <em>differently</em></h2>
+      <h2 className="rv">How we serve differently</h2>
       <div className="rv">
         {ROWS.map(([from, to]) => (
           <div className="row" key={from}>

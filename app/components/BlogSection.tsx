@@ -59,7 +59,7 @@ export default function BlogSection() {
   return (
     <section className="sec" id="blog" ref={sectionRef}>
       <div className="sh">
-        <h2 className="rv">From the <em>blog</em></h2>
+        <h2 className="rv">From the blog</h2>
         <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
           <div className="bf" role="group" aria-label="Filter posts">
             {FILTERS.map((f) => (

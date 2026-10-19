@@ -28,7 +28,7 @@ export default function TeamSection() {
   return (
     <section className="sec" id="team" ref={ref}>
       <div className="sh">
-        <h2 className="rv">Meet the <em>team</em></h2>
+        <h2 className="rv">Meet the team</h2>
         <p className="rv">Technology is built by people. Meet the software engineers, data scientists, GIS experts, and field operational leads behind our digital work.</p>
       </div>
 

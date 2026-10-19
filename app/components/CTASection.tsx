@@ -18,8 +18,7 @@ export default function CTASection() {
     <section className="cs" id="go" ref={ref}>
       <div className="ci rv">
         <h2>
-          Humanity,
-          <em>powered by digital.</em>
+          Humanity, powered by digital.
         </h2>
         <div className="cr">
           <p>Partner with the Digital Transformation Department to bring faster, smarter help to every community we serve.</p>
