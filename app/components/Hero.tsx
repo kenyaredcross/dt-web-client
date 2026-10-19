@@ -20,24 +20,7 @@ export default function Hero() {
           <a className="btn dk" href="#go">Our digital roadmap <Arrow /></a>
         </div>
 
-        <div className="wf2 fu" style={{ animationDelay: "1s" }}>
-          <div className="wh">
-            <h3>Digital tools</h3>
-            <a href="#journey">Learn more</a>
-          </div>
-          <div className="wcs">
-            <div className="wk k1 fl3">
-              <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
-            </div>
-            <div className="wk k2 fl4">
-              <i className="tri" /><i className="cir" />
-            </div>
-            <div className="wk k3 fl3">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="9" y1="3" x2="9" y2="21" /><line x1="15" y1="3" x2="15" y2="21" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="3" y1="15" x2="21" y2="15" /></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       {/* Node diagram */}

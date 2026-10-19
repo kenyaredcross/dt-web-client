@@ -63,25 +63,25 @@ export default function ImpactBento() {
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" />
               </svg>
             </div>
-            <div className="lbl">Our mission: put the right help in the right place, faster.</div>
+            <div className="lbl">Empowered by data and digital solutions to enhance well-being, health and resilience of communities in Kenya.</div>
           </div>
         </div>
 
         <div className="bc gry" style={{ "--i": 1 } as React.CSSProperties}>
-          <CountUp target={47} suffix="" />
-          <div className="lbl">counties in one connected network</div>
+          <CountUp target={260} suffix="k+" />
+          <div className="lbl">volunteers and members across Kenya</div>
         </div>
 
         <div className="bc blk" style={{ "--i": 2 } as React.CSSProperties}>
           <svg className="ecg" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
             <path pathLength="600" d="M0 60 H70 L85 60 L95 20 L110 90 L122 45 L132 60 H190 L205 60 L215 30 L228 75 L238 60 H300" fill="none" stroke="#FF3B30" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
           </svg>
-          <div className="lbl">Response pulse, from every branch to headquarters</div>
+          <div className="lbl">Data-driven decisions, from every branch to headquarters</div>
         </div>
 
         <div className="bc gry" style={{ "--i": 3 } as React.CSSProperties}>
-          <CountUp target={100} suffix="k+" />
-          <div className="lbl">lives impacted</div>
+          <div className="num">2024 to 2028</div>
+          <div className="lbl">strategy horizon for digital transformation</div>
         </div>
       </div>
     </section>
