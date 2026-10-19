@@ -30,6 +30,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${member.n} | Kenya Red Cross Digital Transformation`,
     description: member.b || `${member.n} — ${member.r} at Kenya Red Cross Digital Transformation Department.`,
     path: `/team/${slug}`,
-    image: member.photo ? `${SITE_URL}${member.photo}` : undefined,
+    image: member.photo ? `${process.env.NEXT_PUBLIC_FRAPPE_URL}${member.photo}` : undefined,
   });
 }
