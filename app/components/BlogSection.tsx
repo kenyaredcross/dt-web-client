@@ -88,6 +88,14 @@ export default function BlogSection() {
             data-t={p.c}
             style={{ "--i": i } as React.CSSProperties}
           >
+            {p.img && (
+              <img
+                src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${p.img}`}
+                alt=""
+                aria-hidden="true"
+                className="br-bg"
+              />
+            )}
             <span className="bn mono">{String(i + 1).padStart(2, "0")}</span>
             <span className="bt">{p.n}{p.f && <span className="ftag">FEATURED</span>}</span>
             <span className="bc2 mono">{CL[p.c]}</span>
