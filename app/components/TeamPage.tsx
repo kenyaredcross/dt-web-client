@@ -196,7 +196,6 @@ export default function TeamPageView({ team }: { team: TeamMember[] }) {
                   <div className="tp-pc-foot">
                     <h3 className="tp-pc-name">{m.n}</h3>
                     <p className="tp-pc-role">{m.r}</p>
-                    {m.b && <p className="tp-pc-bio">{m.b}</p>}
                   </div>
                 </a>
               );
