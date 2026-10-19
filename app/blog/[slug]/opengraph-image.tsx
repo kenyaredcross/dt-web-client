@@ -1,12 +1,23 @@
 import { ImageResponse } from "next/og";
 import { frappeFetch } from "../../lib/frappe";
 import { type Post } from "../../data/content";
-import { SITE_URL } from "../../lib/seo";
 
 export const runtime = "nodejs";
 export const alt = "Kenya Red Cross Digital Transformation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+async function toDataUrl(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const buf = await res.arrayBuffer();
+    const mime = res.headers.get("content-type") ?? "image/jpeg";
+    return `data:${mime};base64,${Buffer.from(buf).toString("base64")}`;
+  } catch {
+    return null;
+  }
+}
 
 export default async function OGImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -15,7 +26,10 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
   const title = post?.n ?? "Kenya Red Cross Digital Transformation";
   const desc = post?.d ?? "Stories from the field.";
   const category = post?.k ?? "Blog";
-  const imgUrl = post?.img ? `${process.env.NEXT_PUBLIC_FRAPPE_URL}${post.img}` : null;
+
+  const imgData = post?.img
+    ? await toDataUrl(`${process.env.NEXT_PUBLIC_FRAPPE_URL}${post.img}`)
+    : null;
 
   return new ImageResponse(
     (
@@ -31,9 +45,9 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
         }}
       >
         {/* Cover image background */}
-        {imgUrl && (
+        {imgData && (
           <img
-            src={imgUrl}
+            src={imgData}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.25 }}
           />
         )}

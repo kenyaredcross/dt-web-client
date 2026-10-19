@@ -7,6 +7,18 @@ export const alt = "Kenya Red Cross Digital Transformation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+async function toDataUrl(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const buf = await res.arrayBuffer();
+    const mime = res.headers.get("content-type") ?? "image/jpeg";
+    return `data:${mime};base64,${Buffer.from(buf).toString("base64")}`;
+  } catch {
+    return null;
+  }
+}
+
 export default async function OGImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const member = await frappeFetch<TeamMember>("krcs_dt_cms.dt_cms.api.get_team_member", { slug }).catch(() => null);
@@ -14,7 +26,9 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
   const name = member?.n ?? "Kenya Red Cross";
   const role = member?.r ?? "Digital Transformation Team";
   const initials = member?.i ?? "KR";
-  const photoUrl = member?.photo ? `${process.env.NEXT_PUBLIC_FRAPPE_URL}${member.photo}` : null;
+  const photoData = member?.photo
+    ? await toDataUrl(`${process.env.NEXT_PUBLIC_FRAPPE_URL}${member.photo}`)
+    : null;
   const skills = member?.t?.slice(0, 4) ?? [];
 
   return new ImageResponse(
@@ -41,9 +55,9 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
           background: "#161616",
           flexShrink: 0,
         }}>
-          {photoUrl ? (
+          {photoData ? (
             <img
-              src={photoUrl}
+              src={photoData}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           ) : (
