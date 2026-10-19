@@ -80,7 +80,11 @@ export default function BlogListPage({ posts, voices }: { posts: Post[]; voices:
                 {lead ? (
                   <>
                     <a className="vhr" href={`/blog/${lead.s}`}>
-                      <div className={`vhi ${lead.c}`} dangerouslySetInnerHTML={{ __html: IC[lead.c] }} />
+                      <div className={`vhi ${lead.c}`}>
+                        {lead.img
+                          ? <img src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${lead.img}`} alt={lead.n} style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
+                          : <span dangerouslySetInnerHTML={{ __html: IC[lead.c] }} />}
+                      </div>
                       <h3 className="vht">{lead.n}</h3>
                     </a>
                     <p className="vdk">{lead.d}</p>
@@ -128,7 +132,11 @@ export default function BlogListPage({ posts, voices }: { posts: Post[]; voices:
                   <div className="vst" style={{ marginTop: 0 }}>
                     {visible.map((p) => (
                       <a className="vs" href={`/blog/${p.s}`} key={p.s}>
-                        <div className={`vtn ${p.c}`} dangerouslySetInnerHTML={{ __html: IC[p.c] }} />
+                        <div className={`vtn ${p.c}`}>
+                          {p.img
+                            ? <img src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${p.img}`} alt={p.n} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            : <span dangerouslySetInnerHTML={{ __html: IC[p.c] }} />}
+                        </div>
                         <div>
                           <span className="vtg">{p.k}</span>
                           {p.f && <span className="ftag">FEATURED</span>}
