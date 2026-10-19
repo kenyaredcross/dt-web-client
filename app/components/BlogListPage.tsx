@@ -180,7 +180,11 @@ export default function BlogListPage({ posts, voices }: { posts: Post[]; voices:
                       </div>
                     </div>
                     <p className="sf"><b>{p.n}.</b> {p.d}</p>
-                    <div className={`vimg ${p.c}`} dangerouslySetInnerHTML={{ __html: IC[p.c] }} />
+                    <div className={`vimg ${p.c}`}>
+                      {p.img
+                        ? <img src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${p.img}`} alt={p.n} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        : <span dangerouslySetInnerHTML={{ __html: IC[p.c] }} />}
+                    </div>
                     <div className="vacard-foot">
                       {p.people && p.people.length > 0 && (
                         <div className="pavs">
