@@ -49,7 +49,6 @@ export default function TeamSection() {
             <div className="inf">
               <h3>{m.n}</h3>
               <div className="rl">{m.r}</div>
-              <p>{m.b}</p>
               <div className="chs">
                 {m.t.map((tag) => <span className="ch" key={tag}>{tag}</span>)}
               </div>
