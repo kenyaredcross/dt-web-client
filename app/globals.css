@@ -146,9 +146,16 @@ a { color: inherit; text-decoration: none; }
   min-height: 88vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 60px 5vw;
   overflow: hidden;
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
   gap: 40px;
+  width: 100%;
+  max-width: 1600px;
 }
 #c { position: absolute; inset: 0; width: 100%; height: 100%; }
 
@@ -328,7 +335,7 @@ h2 em { color: var(--red); font-style: normal; }
 
 /* ─── Pillars / Workflow cards ──────────────────────────────── */
 .wf { padding: 90px 5vw; }
-.wfh { max-width: 1300px; margin: 0 auto 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+.wfh { max-width: 1600px; margin: 0 auto 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
 .eb { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--mute); margin-bottom: 16px; }
 .wfh h2 { margin: 0; max-width: 760px; }
 .wfh p { font-size: 16px; line-height: 1.55; color: var(--mute); max-width: 340px; margin: 0; }
@@ -338,7 +345,7 @@ h2 em { color: var(--red); font-style: normal; }
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   align-items: start;
-  max-width: 1300px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 .wfg .wc:nth-child(n+2) { margin-top: 56px; }
@@ -387,7 +394,7 @@ h2 em { color: var(--red); font-style: normal; }
 .pl-head p { font-size: 17px; line-height: 1.6; color: var(--mute); margin: 0; }
 
 .pl-bento {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -481,7 +488,7 @@ h2 em { color: var(--red); font-style: normal; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
-  max-width: 1300px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 .bc {
@@ -541,12 +548,12 @@ h2 em { color: var(--red); font-style: normal; }
 
 /* ─── Team accordion ─────────────────────────────────────────── */
 .sec { padding: 90px 5vw; }
-.sh { max-width: 1300px; margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; }
+.sh { max-width: 1600px; margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; }
 .sh h2 { margin: 0; }
 .sh h2 em { font-style: italic; }
 .sh p { font-size: 16px; line-height: 1.55; color: var(--mute); max-width: 340px; margin: 0; }
 
-.ta { display: flex; gap: 14px; height: 500px; max-width: 1300px; margin: 0 auto; }
+.ta { display: flex; gap: 14px; height: 500px; max-width: 1600px; margin: 0 auto; }
 .tp {
   position: relative;
   flex: 1;
@@ -643,7 +650,7 @@ h2 em { color: var(--red); font-style: normal; }
 .bl .br:hover { background: #f7f7f7; transform: translateY(-3px); box-shadow: 0 12px 32px -8px rgba(0,0,0,.13), 0 0 0 1px rgba(0,0,0,.06); }
 .bl .br:hover .ul { color: var(--red); }
 
-.bprg { max-width: 1300px; height: 4px; background: rgba(10,10,10,.12); margin: 6px auto 0; border-radius: 99px; overflow: hidden; }
+.bprg { max-width: 1600px; height: 4px; background: rgba(10,10,10,.12); margin: 6px auto 0; border-radius: 99px; overflow: hidden; }
 .bprg i { display: block; height: 100%; width: 20%; background: var(--red); border-radius: 99px; transition: width .2s; }
 
 .bnav { display: flex; gap: 10px; }
@@ -662,7 +669,7 @@ h2 em { color: var(--red); font-style: normal; }
   display: grid;
   grid-template-columns: 1.2fr 1fr 1.2fr;
   gap: 20px;
-  max-width: 1300px;
+  max-width: 1600px;
   margin: 0 auto;
   align-items: center;
 }
@@ -729,7 +736,7 @@ h2 em { color: var(--red); font-style: normal; }
 /* ─── CTA section ────────────────────────────────────────────── */
 .cs { padding: 30px 5vw 90px; }
 .ci {
-  max-width: 1300px;
+  max-width: 1600px;
   margin: 0 auto;
   background: #0a0a0a;
   color: #fff;
@@ -886,7 +893,7 @@ footer { padding: 28px 5vw; font-size: 13px; color: var(--mute); }
 @media (max-width: 700px) { .rc { display: none; } }
 
 /* ─── Inner page: Team / Blog / Post ────────────────────────── */
-.pgw { max-width: 1300px; margin: 0 auto; padding: 60px 5vw 90px; animation: fu .8s cubic-bezier(.2,.8,.2,1); }
+.pgw { max-width: 1600px; margin: 0 auto; padding: 60px 5vw 90px; animation: fu .8s cubic-bezier(.2,.8,.2,1); }
 .crm { font-size: 13px; color: var(--mute); letter-spacing: .1em; text-transform: uppercase; }
 .crm a { color: var(--red); font-weight: 700; }
 .pgw h1 { font-size: clamp(40px, 7vw, 96px); line-height: 1; letter-spacing: -.045em; margin: 18px 0 20px; max-width: 1000px; }
@@ -921,7 +928,7 @@ footer { padding: 28px 5vw; font-size: 13px; color: var(--mute); }
 @media (max-width: 800px) { .ft { grid-template-columns: 1fr; padding: 32px; } }
 
 /* Blog / portfolio grid */
-.tg { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; max-width: 1300px; margin: 0 auto; }
+.tg { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; max-width: 1600px; margin: 0 auto; }
 .pg { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .tc, .pc { background: #fff; border-radius: 26px; cursor: pointer; will-change: transform; transition: transform .6s cubic-bezier(.3,1.5,.5,1); box-shadow: 0 22px 40px -16px rgba(0,0,0,.22), 0 8px 16px -4px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.06); }
 .pc { overflow: hidden; display: flex; flex-direction: column; }
@@ -958,11 +965,11 @@ footer { padding: 28px 5vw; font-size: 13px; color: var(--mute); }
 .bk2 { font-weight: 700; display: inline-block; margin-top: 40px; }
 
 /* Blog view (vx) */
-.vg { max-width: 1300px; margin: 0 auto; padding: 40px 5vw 90px; animation: fu .8s cubic-bezier(.2,.8,.2,1); }
+.vg { max-width: 1600px; margin: 0 auto; padding: 40px 5vw 90px; animation: fu .8s cubic-bezier(.2,.8,.2,1); }
 .vk { display: flex; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
 .vk a { color: var(--red); }
 .vk span { color: var(--mute); }
-h1.vt { font-size: clamp(28px, 4.5vw, 58px); line-height: .95; letter-spacing: -.05em; font-weight: 800; margin: 20px 0 22px; max-width: 1100px; }
+h1.vt { font-size: clamp(28px, 4.5vw, 58px); line-height: .95; letter-spacing: -.05em; font-weight: 800; margin: 20px 0 22px; max-width: 1400px; }
 .vd { font-size: clamp(19px, 2.2vw, 26px); line-height: 1.4; color: #55555c; max-width: 860px; margin: 0 0 30px; }
 .vby { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid rgba(10,10,10,.15); }
 .vav { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
@@ -1175,7 +1182,7 @@ h1.vt { font-size: clamp(28px, 4.5vw, 58px); line-height: .95; letter-spacing: -
 
 .vf2 { padding: 30px 0; }
 .vf2:first-child { padding-top: 0; }
-.varow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; max-width: 1100px; }
+.varow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; max-width: 1400px; }
 .vacard { display: block; padding: 30px 28px 28px; text-decoration: none; color: inherit; transition: background .18s; }
 .vacard:hover { background: #f7f7f7; }
 .vacard .vfh { margin-bottom: 16px; }
@@ -1223,7 +1230,7 @@ h1.vt { font-size: clamp(28px, 4.5vw, 58px); line-height: .95; letter-spacing: -
 }
 
 /* ─── Team banner ─────────────────────────────────────────────── */
-.tbw { max-width: 1300px; margin: 0 auto 40px; }
+.tbw { max-width: 1600px; margin: 0 auto 40px; }
 .tbr { position: relative; aspect-ratio: 1.55; min-height: 420px; overflow: hidden; }
 .tbg { position: absolute; inset: 0; display: flex; z-index: 0; }
 .tbg img { flex: 1; min-width: 0; height: 100%; object-fit: cover; object-position: top; }

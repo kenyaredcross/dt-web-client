@@ -10,6 +10,7 @@ export default function Hero() {
 
       {/* Floating accent bubbles */}
 
+      <div className="hero-inner">
       {/* Main content */}
       <div className="in">
         <HeroScramble />
@@ -49,6 +50,7 @@ export default function Hero() {
         <div className="nc p11 alt" style={{ "--i": 10 } as React.CSSProperties}><div className="nd pk md2"><svg viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></svg></div></div>
       </div>
 
+      </div>
       <HeroParallax />
     </header>
   );
