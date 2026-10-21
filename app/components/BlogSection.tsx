@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { CL, type Post } from "../data/content";
+import { CL, IC, type Post } from "../data/content";
 import { frappeFetch } from "../lib/frappe";
 import Arrow from "./Arrow";
 
@@ -83,24 +83,27 @@ export default function BlogSection() {
         {posts.map((p, i) => (
           <a
             key={p.s}
-            className={`br${filter !== "all" && p.c !== filter ? " hid" : ""}`}
+            className={`br vacard${filter !== "all" && p.c !== filter ? " hid" : ""}`}
             href={`/blog/${p.s}`}
             data-t={p.c}
             style={{ "--i": i } as React.CSSProperties}
           >
-            {p.img && (
-              <img
-                src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${p.img}`}
-                alt=""
-                aria-hidden="true"
-                className="br-bg"
-              />
-            )}
-            <span className="bn mono">{String(i + 1).padStart(2, "0")}</span>
-            <span className="bt">{p.n}{p.f && <span className="ftag">FEATURED</span>}</span>
-            <span className="bc2 mono">{CL[p.c]}</span>
-            <span className="bd mono">{p.k}</span>
-            <span className="bar"><Arrow /></span>
+            <div className="vfh">
+              <div className="va">KR</div>
+              <div>
+                <div className="vby2"><b>KENYA RED CROSS DIGITAL</b></div>
+                <div className="vsub">{p.k}</div>
+              </div>
+            </div>
+            <p className="sf"><b>{p.n}.</b> {p.d}</p>
+            <div className={`vimg ${p.c}`}>
+              {p.img
+                ? <img src={`${process.env.NEXT_PUBLIC_FRAPPE_URL}${p.img}`} alt={p.n} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                : <span dangerouslySetInnerHTML={{ __html: IC[p.c] }} />}
+            </div>
+            <div className="vacard-foot">
+              <span className="ul">Read the story</span>
+            </div>
           </a>
         ))}
       </div>
