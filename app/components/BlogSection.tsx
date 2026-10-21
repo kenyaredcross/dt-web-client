@@ -108,9 +108,6 @@ export default function BlogSection() {
         ))}
       </div>
 
-      <div className="bprg">
-        <i ref={progRef} id="bpi" />
-      </div>
 
       <div className="dbt rv" style={{ marginTop: 40 }}>
         <a className="cb" href="/blog">
