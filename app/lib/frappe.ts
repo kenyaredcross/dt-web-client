@@ -6,9 +6,10 @@ export async function frappeFetch<T>(
 ): Promise<T> {
   const url = new URL(`/api/method/${method}`, BASE)
   if (params) Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v))
+  // NOTE: do not set an "Expect" header here — Node's fetch (undici) rejects
+  // a manually-set Expect header with UND_ERR_NOT_SUPPORTED, which breaks SSR.
   const res = await fetch(url.toString(), {
     cache: "no-store",
-    headers: { "Expect": "" },
   })
   if (!res.ok) throw new Error(`Frappe ${res.status}: ${method}`)
   const json = await res.json()
