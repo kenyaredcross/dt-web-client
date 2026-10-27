@@ -6,7 +6,10 @@ export async function frappeFetch<T>(
 ): Promise<T> {
   const url = new URL(`/api/method/${method}`, BASE)
   if (params) Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v))
-  const res = await fetch(url.toString(), { cache: "no-store" })
+  const res = await fetch(url.toString(), {
+    cache: "no-store",
+    headers: { "Expect": "" },
+  })
   if (!res.ok) throw new Error(`Frappe ${res.status}: ${method}`)
   const json = await res.json()
   return json.message as T

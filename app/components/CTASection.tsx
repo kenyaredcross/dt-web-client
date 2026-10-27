@@ -22,7 +22,7 @@ export default function CTASection() {
         </h2>
         <div className="cr">
           <p>Partner with the Digital Transformation Department to bring faster, smarter help to every community we serve.</p>
-          <a className="cb" href="#">
+          <a className="cb" href="/contact">
             Partner with us
             <span className="ar">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

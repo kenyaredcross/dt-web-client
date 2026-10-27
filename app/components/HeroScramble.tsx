@@ -2,10 +2,10 @@
 import { useEffect, useRef } from "react";
 
 const PAIRS: [string, string][] = [
-  ["PAPER", "PIXELS"],
-  ["DELAYS", "SPEED"],
-  ["GUESSWORK", "DATA"],
-  ["SILOS", "SYSTEMS"],
+  ["MANUAL", "DATA-DRIVEN"],
+  ["REACTIVE", "PROACTIVE"],
+  ["ISOLATED", "CONNECTED"],
+  ["SILOS", "COLLABORATION"],
 ];
 const CH = "01#/<>_X$%";
 
@@ -49,10 +49,10 @@ export default function HeroScramble() {
   return (
     <h1>
       <span className="ln">
-        <b>From <span ref={aRef}>PAPER</span></b>
+        <b>From <span ref={aRef}>MANUAL</span></b>
       </span>
       <span className="ln">
-        <b>to <span className="r" ref={bRef}>PIXELS</span>.</b>
+        <b>to <span className="r" ref={bRef}>DATA-DRIVEN</span>.</b>
       </span>
     </h1>
   );

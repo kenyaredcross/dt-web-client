@@ -29,7 +29,7 @@ export default function DemoSection() {
 
   useEffect(() => {
     frappeFetch<ServiceTag[]>("krcs_dt_cms.dt_cms.api.get_services")
-      .then(setServices)
+      .then((s) => { if (s && s.length > 0) setServices(s); })
       .catch(() => {/* keep static fallback */});
     frappeFetch<SiteSettings>("krcs_dt_cms.dt_cms.api.get_site_settings")
       .then((s) => {
@@ -52,7 +52,7 @@ export default function DemoSection() {
   return (
     <section className="dm" id="demo" aria-label="Book a demo" ref={ref}>
       <div className="dbt rv">
-        <a className="cb" href="#go">
+        <a className="cb" href="/contact">
           Book a demo
           <span className="ar">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
