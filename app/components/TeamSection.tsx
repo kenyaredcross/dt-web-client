@@ -6,6 +6,14 @@ import Arrow from "./Arrow";
 
 const BASE = process.env.NEXT_PUBLIC_FRAPPE_URL ?? ""
 
+// Build a safe absolute file URL: encode each path segment (handles spaces,
+// parens, etc. in Frappe filenames) while preserving the slashes.
+function fileUrl(path: string): string {
+  if (!path) return ""
+  const encoded = path.split("/").map(encodeURIComponent).join("/")
+  return `${BASE}${encoded}`
+}
+
 export default function TeamSection() {
   const [active, setActive] = useState(0);
   const [team, setTeam] = useState<TeamMember[]>([]);
@@ -60,7 +68,7 @@ export default function TeamSection() {
             onClick={() => setActive(i)}
             onFocus={() => setActive(i)}
             style={m.photo ? {
-              backgroundImage: `url(${BASE}${m.photo})`,
+              backgroundImage: `url("${fileUrl(m.photo)}")`,
               backgroundSize: "cover",
               backgroundPosition: "center top",
             } : undefined}
